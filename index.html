@@ -39,7 +39,25 @@
         <style>
           .thumbnails{
             height:100%;
+            /*width: 225px;
+            height: 220px;*/
           }
+
+          .logos{
+            width:180px;
+            height: 180px;
+          }
+
+          #carleton-logo{
+            width:158px;
+            /*height: 110%;*/
+          }
+
+          #gov-canada-logo{
+            height: 95px;
+          }
+
+
         </style>
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -86,7 +104,7 @@
             <div class="row">
                 <header class="centered">
                     <h1>Zuwa Omigie</h1>
-                    <p>WEB/SOFTWARE DEVELOPER</p>
+                    <p>SOFTWARE DEVELOPER</p>
                 </header>
                 <div class="social-icons">
                         <!-- <a href="https://twitter.com/" class="btn btn-round btn-clear btn-twitter"><i class="fa fa-twitter"></i></a>
@@ -126,9 +144,9 @@
                </span>
             </div>
                <div class="col-md-2">
-               <span class="chart" data-percent="84">
+               <span class="chart" data-percent="90">
                       <span class="percent"></span>
-                       <h3>C/Assembly</h3>
+                       <h3>C</h3>
                </span>
             </div>
                <div class="col-md-2">
@@ -164,7 +182,7 @@
                  <div class="col-md-6">
                   <article class="education">
                     <header>
-                      <p class="text-center"><img src="./img/Extensionflag.jpg"/></p>
+                      <p class="text-center"><img class="logos" src="./img/Extensionflag.jpg"/></p>
                       <h3>Web Technologies (Post Grad. Certificate)</h3>
                       <p><h5><span class="text-danger">Harvard University </span>  <i> (Jan. 2014 - Current)</i></h5></p>
                     </header>
@@ -174,7 +192,7 @@
                 <div class="col-md-6">
                 <article class="education">
                   <header>
-                    <p class="text-center"><img height="30%" src="./img/Carleton.jpg"/></p>
+                    <p class="text-center"><img id="carleton-logo" src="./img/Carleton.jpg"/></p>
                     <h3>Bachelors of Engineering, Software (BEng.)</h3>
                     <p><h5><span class="text-danger"> Carleton University</span>   <i>(Sept. 2008 - April 2013) </i><h5></p>
                   </header>
@@ -280,7 +298,7 @@ descent parsing) and the jasmin assembly code generator.</p>
 
             <div class="row">
               <div class="col-md-3">
-                 <div class="profile"><img src="img/profile.png" alt="profile"/></div> 
+                 <div class="profile"><img class="thumbnails" src="img/js.jpg" alt="profile"/></div> 
               </div>
                <div class="col-md-9">
                 <h3> Z's Tic Tac</h3>
@@ -316,6 +334,7 @@ descent parsing) and the jasmin assembly code generator.</p>
     <!-- experience begins -->
      <section id="page-experience" class="page-experience">
        <div class="container">
+
                 <header class="section-header">
                     <h2 class="section-title"><span>Industry Experience</span></h2>
                      <div class="spacer"></div>
@@ -325,6 +344,7 @@ descent parsing) and the jasmin assembly code generator.</p>
                  <div class="col-md-4">
                   <article class="experience">
                     <header>
+                      <div><img class="logos" src="img/alcatel-lucent-logo.jpg" /></div>  
                       <h3>Alcatel-Lucent Inc.</h3>
                       <p>Software Application Engineer / Ottawa, ON / 2013 - Current</p>
                     </header>
@@ -334,6 +354,7 @@ descent parsing) and the jasmin assembly code generator.</p>
                 <div class="col-md-4">
                   <article class="experience">
                     <header>
+                      <div><img class="logos" src="img/EA-logo.png" /></div>  
                       <h3>Electronic Arts (EA Games)</h3>
                        <p>Software Engineer (Coop) / Waterloo, ON / 2012 </p>
                     </header>
@@ -343,23 +364,29 @@ descent parsing) and the jasmin assembly code generator.</p>
                 <div class="col-md-4">
                   <article class="experience">
                     <header>
+                      <div ><img class="logos" src="img/blackberry-logo.png" /></div>  
                       <h3>BlackBerry</h3>
                        <p>Software Designer (Coop) / Ottawa, ON / 2010 - 2011</p>
                     </header>
                       <p>I was part of the product delivery team responsible for bug fixing and well delivered software to consumers.</p>
                   </article>
                 </div>
+            </div>
 
+            <div class="row">
+                <br />
                 <div class="col-md-5 col-md-offset-0">
                   <article class="experience">
                     <header>
+                      <div ><img class="logos" id="gov-canada-logo" src="img/gov_of_Canada_logo.png" /></div>  
                       <h3>Department of National Defence</h3>
                        <p>Level 2 Support (Coop) / Ottawa, ON / 2010</p>
                     </header>
                       <p> </p>
                   </article>
-                </div>
+                </div>              
             </div>
+
         </div>
     </section><!-- experience ends -->
     <!-- portfolio begins -->
