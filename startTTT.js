@@ -4,11 +4,11 @@
 
 
 
-var x = "u.png";
+var x = "./img/u.png";
 
-var o = "z.png";
+var o = "./img/z.png";
 
-var blank = "blank.png";
+var blank = "./img/blank.png";
 
 var pause = 0;
 var all = 0;
