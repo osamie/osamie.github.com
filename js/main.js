@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-    var writeletterbyletter,nameText,showSubtext; 
+    var writeletterbyletter,nameText,showSubtext, isBackgroundLoaded; 
 
     
 /* Scroll hire me button to contact page */
@@ -22,6 +22,7 @@ $(document).ready(function(){
 
 	$(window).load(function(){
         var $container = $('.grid-wrapper');
+
         $container.isotope({
             filter: '*',
             animationOptions: {
@@ -51,22 +52,22 @@ $(document).ready(function(){
     });
 
 
-/* Magnific Popup */
-$('.grid-wrapper').magnificPopup({
-		  delegate: 'a', 
-		  type: 'image',
-		  gallery:{
-			enabled:true
-		  }
-		});
+    /* Magnific Popup */
+    $('.grid-wrapper').magnificPopup({
+    		  delegate: 'a', 
+    		  type: 'image',
+    		  gallery:{
+    			enabled:true
+    		  }
+	});
 
 
 
-/* Sticky menu */
-$(".navbar").sticky({topSpacing: 0});
+    /* Sticky menu */
+    $(".navbar").sticky({topSpacing: 0});
 
 
-/* Scroll spy and scroll filter */
+    /* Scroll spy and scroll filter */
     $('#main-menu').onePageNav({
         currentClass: "active",
         changeHash: false,
@@ -76,32 +77,61 @@ $(".navbar").sticky({topSpacing: 0});
         easing: "swing"	
      });
 
-/* Charts*/
-    
-$('.chart').waypoint(function() {
-    $(this).easyPieChart({
-    	   barColor: '#3498db',
-    	   size: '150',
-			easing: 'easeOutBounce',
+
+    /* Charts*/    
+    $('.chart').waypoint(function() {
+        $(this).easyPieChart({
+            barColor: '#3498db',
+    	    size: '150',
+		    easing: 'easeOutBounce',
 			onStep: function(from, to, percent) {
 				$(this.el).find('.percent').text(Math.round(percent));
 			}
-	 });
-}, {
-  triggerOnce: true,
-  offset: 'bottom-in-view'
-});
+	    });
+    },  {
+          triggerOnce: true,
+          offset: 'bottom-in-view'
+        });
 
 
-/* VEGAS Home Slider */
+    /* VEGAS Home Slider */
+
+    nameText = "Zuwa Omigie";
+    isBackgroundLoaded = false;
+
+    $("p#my-title").hide();
+    showSubtext = function(){
+        $("p#my-title").html("SOFTWARE ENGINEER");
+        $("p#my-title").show("slow");
+    };
+
+    writeletterbyletter = function (target, text, index, interval, callback) {      
+        if(index < text.length){
+            $(target).append(text[index++]);
+            setTimeout(function(){writeletterbyletter(target, text, index, interval, callback);},interval);
+        }
+        if((index === text.length) && (typeof callback === 'function')){
+            callback();
+        }
+    };
 	
 		$.vegas('slideshow', {
 			  backgrounds:[
-				{ src:'img/slider/02.jpg', fade:1000 }
+				{ 
+                    src:'img/slider/02.jpg', 
+                    fade:1000,
+                    complete: function(){
+                        if(!isBackgroundLoaded){
+                            isBackgroundLoaded = true;
+                            writeletterbyletter("h1#my-name",nameText,0,200, showSubtext);    
+                        }
+                        
+                    }
+                }
 			  ]
 			})('overlay', {
-			  src:'img/overlays/16.png',
-              opacity: 1
+                src:'img/overlays/16.png',
+                opacity: 1 
 			});
 
 			$( "#vegas-next" ).hide(); 
@@ -131,29 +161,6 @@ $('.chart').waypoint(function() {
                 element.text('OK!').addClass('valid')
                     .closest('.control-group').removeClass('error').addClass('success');
             }
-        });
-
-
-    nameText = "Zuwa Omigie";
-    showSubtext = function(){
-        $("p#my-title").html("SOFTWARE ENGINEER & WEB DEVELOPER");
-        $("p#my-title").show("slow");
-    };
-
-    writeletterbyletter = function (target, text, index, interval, callback) {      
-        if(index < text.length){
-            $(target).append(text[index++]);
-            setTimeout(function(){writeletterbyletter(target, text, index, interval, callback);},interval);
-        }
-
-        if((index === text.length) && (typeof callback === 'function')){
-            callback();
-        }
-    };
-
-
-    $("p#my-title").hide();
-    writeletterbyletter("h1#my-name",nameText,0,200, showSubtext);
-
+        });    
 });
 
